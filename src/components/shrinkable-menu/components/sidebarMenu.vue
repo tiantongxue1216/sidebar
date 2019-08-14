@@ -7,30 +7,30 @@
         <template v-for="item in menuList">
             <Submenu v-if="item.children && item.children.length > 1" :name="item.name" :key="item.name">
                 <template slot="title">
-                    <Icon :type="item.icon" size="18"></Icon>
+                    <Icon :type="item.icon" size="18" class="layout-icon"></Icon>
                     <span class="layout-text">{{ itemTitle(item) }}</span>
                 </template>
                 <template v-for="child in item.children">
                     <MenuItem :name="child.name" :key="'menuitem' + child.name">
-                        <Icon :type="child.icon" :key="'icon' + child.name" size="18"></Icon>
+                        <Icon :type="child.icon" :key="'icon' + child.name" size="18" class="layout-icon"></Icon>
                         <span class="layout-text" :key="'title' + child.name">{{ child.title }}</span>
                     </MenuItem>
                 </template>
             </Submenu>
             <Submenu v-else-if="item.children.length === 1" :name="item.name" :key="item.name">
                 <template slot="title">
-                    <Icon :type="item.icon" size="18"/>
+                    <Icon :type="item.icon" size="18" class="layout-icon"/>
                     <span class="layout-text">{{ itemTitle(item) }}</span>
                 </template>
                 <template>
                     <MenuItem :name="item.name" :key="'menuitem' + item.name">
-                        <Icon :type="item.icon" size="18"></Icon>
+                        <Icon :type="item.icon" size="18" class="layout-icon"></Icon>
                         <span class="layout-text">{{ item.name }}</span>
                     </MenuItem>
                 </template>
             </Submenu>
             <MenuItem v-else :name="item.name" :key="'menuitem' + item.name">
-                <Icon :type="item.icon" size="18"></Icon>
+                <Icon :type="item.icon" size="18" class="layout-icon"></Icon>
                 <span class="layout-text" :key="'title' + item.name">{{ itemTitle(item) }}</span>
             </MenuItem>
         </template>

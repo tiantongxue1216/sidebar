@@ -1,9 +1,12 @@
+<style lang="less">
+</style>
+
 <template>
   <div class="container">
       <span class="navicon-con" @click="toggleClick" :style="{'width':shrink?'40px':'130px','padding-left': shrink?'8px':'65px','transform': 'rotateZ(' + (this.shrink ? '0' : '-180') + 'deg)'}">
         <Icon type="md-arrow-dropright" style="font-size: 20px;color:#49505F;"></Icon>
       </span>
-      <div class="sidebar-menu-con" :style="{width: shrink?'64px':'214px', overflow: shrink ? 'visible' : 'auto'}">
+      <div class="sidebar-menu-con" :style="{width: shrink?'66px':'214px', overflow: shrink ? 'visible' : 'auto'}">
         <shrinkable-menu
             :shrink="shrink"
             :menu-list="menuList"
@@ -29,12 +32,12 @@ export default {
     return {
       shrink: true,
       menuList: [
-        // {
-        //   children: [],
-        //   icon: 'logo-buffer',
-        //   name: 'dataCollection',
-        //   title: '数据集'
-        // },
+        {
+          children: [],
+          icon: 'logo-buffer',
+          name: 'dataCollection',
+          title: '数据集'
+        },
         {
           children: [],
           icon: 'md-cube',

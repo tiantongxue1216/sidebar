@@ -4,6 +4,7 @@
 
 <template>
     <div :style="{background: bgColor}" class="ivu-shrinkable-menu">
+    <!-- <div style="background: #2A3B5B " class="ivu-shrinkable-menu"> -->
         <slot name="top"></slot>
         <sidebar-menu
             v-show="!shrink"
@@ -43,7 +44,7 @@ export default {
         },
         theme: {
             type: String,
-            default: 'light',
+            default: 'dark',
             // validator (val) {
             //     return util.oneOf(val, ['dark', 'light']);
             // }
@@ -57,10 +58,10 @@ export default {
     },
     computed: {
         bgColor () {
-            return this.theme === 'dark' ? '#fff' : '#fff';
+            return this.theme === 'dark' ? '#2A3B5B' : '#fff';
         },
         shrinkIconColor () {
-            return this.theme === 'light' ? '#0077FF' : '#0077FF';
+            return this.theme === 'light' ? '#fff' : '#2A3B5B';
         }
     },
     methods: {
